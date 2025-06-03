@@ -1,10 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { OpenAI } from "openai";
-
-const openai = new OpenAI({
-  apiKey: process.env.NEXT_PUBLIC_API_KEY,
-  dangerouslyAllowBrowser: true,
-});
+import { useEffect, useState } from "react";
 
 const useTranslate = (source: string, selectedLanguage: string) => {
   const [targetText, setTargetText] = useState<string | null>(null);
@@ -13,19 +7,14 @@ const useTranslate = (source: string, selectedLanguage: string) => {
   useEffect(() => {
     const translateText = async () => {
       try {
-        const response = await openai.chat.completions.create({
-          model: "gpt-3.5-turbo",
-          store: true,
-          messages: [
-            {
-              role: "system",
-              content: `Translate the following text to ${selectedLanguage}, do not return anything else other than the translated text.`,
-            },
-            { role: "user", content: source },
-          ],
+        const res = await fetch("/api/translate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ source, selectedLanguage }),
         });
-        const data = response.choices[0].message.content;
-        setTargetText(data);
+        if (!res.ok) throw new Error("API error");
+        const data = await res.json();
+        setTargetText(data.translatedText);
       } catch (err) {
         setError("Translation failed! Please try again.");
       }
