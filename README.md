@@ -37,7 +37,7 @@
 ### 1. Clone the repository
 
 ```sh
-git clone https://github.com/Chirantan2002/Lexify.git
+git clone https://github.com/your-username/lexify.git
 cd lexify
 ```
 ### 2. Installing All Dependencies from a Text File
@@ -92,6 +92,14 @@ npm install
 # or
 ```sh
 yarn install
+```
+## 4. Run the application
+```sh
+npm run dev
+```
+# or
+```sh
+yarn dev
 ```
 <hr>
 
