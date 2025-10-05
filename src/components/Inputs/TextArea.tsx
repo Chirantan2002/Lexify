@@ -3,6 +3,7 @@ import React from "react";
 
 interface TextAreaProps {
   id: string;
+  height?: number;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   placeholder?: string;
@@ -10,6 +11,7 @@ interface TextAreaProps {
 
 const TextArea: React.FC<TextAreaProps> = ({
   id,
+  height,
   value,
   onChange,
   placeholder,
@@ -18,6 +20,7 @@ const TextArea: React.FC<TextAreaProps> = ({
     <textarea
       rows={7}
       id={id}
+      style={{ height: `${height}px` }}
       value={value}
       onChange={onChange}
       placeholder={placeholder}

@@ -23,10 +23,10 @@ const CategoryLinks: React.FC = () => {
       {categories.map(({ icon: Icon, label }) => (
         <div
           key={label}
-          className="m-1 inline-flex items-center space-x-2 text-sm font-medium rounded-lg border-gray bg-gray-200 text-gray-800 shadow-sm hover:bg-blue-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-blue-600 transition-all duration-200 p-3 cursor-pointer"
+          className="m-1 inline-flex items-center space-x-2 text-sm font-medium rounded-lg border-gray bg-gray-200 text-gray-800 shadow-sm hover:bg-green-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-700 dark:text-gray-200 dark:hover:text-slate-900 dark:border-gray-600 dark:hover:bg-green-400 transition-all duration-300 ease-in-out p-3 cursor-pointer"
         >
           <Icon size={22} />
-          <span className="">{label}</span>
+          <span className="font-semibold tracking-wide">{label}</span>
         </div>
       ))}
     </div>
