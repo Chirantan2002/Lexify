@@ -11,7 +11,7 @@ const useTranslate = (source: string, selectedLanguage: string) => {
     const translateText = async () => {
       try {
         const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
-        const prompt = `Translate ONLY the following text to ${selectedLanguage}. Respond with ONLY the translated text, no explanation or alternatives: "${source}"`;
+        const prompt = `Translate ONLY the following text to ${selectedLanguage}. Respond with ONLY the translated text accurately with correct meaning, no explanation or alternatives: "${source}"`;
         const response = await ai.models.generateContent({
           model: "gemini-2.0-flash",
           contents: [{ parts: [{ text: prompt }] }],
