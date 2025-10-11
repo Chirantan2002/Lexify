@@ -25,31 +25,33 @@ export default function Home() {
         />
         <div className="absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)] dark:bg-black"></div>
 
-        <div className="flex flex-col sm:mt-32 md:mt-0 md:overflow-hidden items-center justify-center min-h-screen sm:px-8 p-8 gap-8 font-[family-name:var(--font-geist-sans)] mx-auto">
+        <div className="flex flex-col md:overflow-hidden items-center justify-center min-h-screen sm:px-8 p-8 gap-8 font-[family-name:var(--font-geist-sans)] mx-auto">
           <div className="absolute">
-            <div className="text-center sm:mt-90 md:mt-0">
-              <h1 className="font-bold text-neutral-300 text-4xl sm:text-6xl tracking-wide">
-                Lex<span className="text-green-400">ify</span>
-              </h1>
-              <p className="mt-3 text-neutral-400 hover:text-green-400 transition-colors duration-300 ease-in-out font-semibold tracking-wide">
-                Lexify: Bridging Voices, Connecting Worlds
-              </p>
-              <div className="mt-7 mx-auto max-w-3xl relative">
-                <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
-                  {/* Source Language */}
-                  <InputComponent
-                    sourceText={sourceText}
-                    setSourceText={setSourceText}
-                  />
-                  {/* Target Language */}
-                  <OutputPanelComponent
-                    sourceText={sourceText}
-                    selectedLanguage={selectedLanguage}
-                    setSelectedLanguage={setSelectedLanguage}
-                  />
+            <div className="text-center">
+              <div className="mt-50 md:mt-0">
+                <h1 className="font-bold text-neutral-300 text-4xl sm:text-6xl tracking-wide">
+                  Lex<span className="text-green-400">ify</span>
+                </h1>
+                <p className="mt-3 text-neutral-400 hover:text-green-400 transition-colors duration-300 ease-in-out font-semibold tracking-wide">
+                  Lexify: Bridging Voices, Connecting Worlds
+                </p>
+                <div className="mt-7 mx-auto max-w-3xl relative">
+                  <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
+                    {/* Source Language */}
+                    <InputComponent
+                      sourceText={sourceText}
+                      setSourceText={setSourceText}
+                    />
+                    {/* Target Language */}
+                    <OutputPanelComponent
+                      sourceText={sourceText}
+                      selectedLanguage={selectedLanguage}
+                      setSelectedLanguage={setSelectedLanguage}
+                    />
+                  </div>
                 </div>
+                <CategoryLinks />
               </div>
-              <CategoryLinks />
             </div>
           </div>
         </div>
