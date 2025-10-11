@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "../../lib/utils";
+import { cn } from "../../../lib/utils";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CategoryLinks from "@/components/CategoryLinks";
@@ -25,8 +25,8 @@ export default function Home() {
         />
         <div className="absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)] dark:bg-black"></div>
 
-        <div className="flex flex-col mt-10 sm:mt-20 md:mt-0 md:overflow-hidden items-center justify-center min-h-screen sm:px-8 p-8 gap-8 font-[family-name:var(--font-geist-sans)] mx-auto">
-          <div className="absolute">
+        <div className="flex flex-col sm:mt-32 md:mt-0 md:overflow-hidden items-center justify-center min-h-screen sm:px-8 p-8 gap-8 font-[family-name:var(--font-geist-sans)] mx-auto">
+          <div className="absolute sm:mt-[4rem] md:mt-2">
             <div className="text-center">
               <h1 className="font-bold text-neutral-300 text-4xl sm:text-6xl tracking-wide">
                 Lex<span className="text-green-400">ify</span>
@@ -34,7 +34,7 @@ export default function Home() {
               <p className="mt-3 text-neutral-400 hover:text-green-400 transition-colors duration-300 ease-in-out font-semibold tracking-wide">
                 Lexify: Bridging Voices, Connecting Worlds
               </p>
-              <div className="mt-7 sm:mt-12 mx-auto max-w-3xl relative">
+              <div className="mt-7 mx-auto max-w-3xl relative">
                 <div className="grid gap-4 md:grid-cols-2 grid-cols-1">
                   {/* Source Language */}
                   <InputComponent

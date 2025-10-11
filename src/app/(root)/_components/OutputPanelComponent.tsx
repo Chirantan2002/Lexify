@@ -13,7 +13,7 @@ import VolumeComponent from "@/components/SpeechRecognition/VolumeComponent";
 import useTranslate from "@/hooks/UseTranslateHook";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { cn } from "../../../lib/utils";
+import { cn } from "../../../../lib/utils";
 
 interface OutputPanelProps {
   sourceText: string;
