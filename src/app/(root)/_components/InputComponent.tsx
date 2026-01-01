@@ -4,7 +4,7 @@ import FileUploadComponent from "@/components/Inputs/FileUploadComponent";
 import SpeechRecognitionComponent from "@/components/SpeechRecognition/SpeechRecognition";
 import TextArea from "@/components/Inputs/TextArea";
 import VolumeComponent from "@/components/SpeechRecognition/VolumeComponent";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, memo, useState } from "react";
 
 interface InputComponentProps {
   sourceText: string;
@@ -50,4 +50,4 @@ const InputComponent = ({ sourceText, setSourceText }: InputComponentProps) => {
   );
 };
 
-export default InputComponent;
+export default memo(InputComponent);

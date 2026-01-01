@@ -11,9 +11,11 @@ const useTranslate = (source: string, selectedLanguage: string) => {
     const translateText = async () => {
       try {
         const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
-        const prompt = `Translate ONLY the following text to ${selectedLanguage}. Respond with ONLY the translated text accurately with correct meaning, no explanation or alternatives: "${source}"`;
+        const prompt = `Translate ONLY the following text to ${selectedLanguage}. Return only the translated text. Do not add explanations, comments, alternatives, or quotes. Preserve the original meaning, tone, formatting, grammar and punctuation.
+        
+        Text: "${source}"`;
         const response = await ai.models.generateContent({
-          model: "gemini-2.0-flash",
+          model: "gemini-2.5-flash-lite",
           contents: [{ parts: [{ text: prompt }] }],
         });
         setTargetText(response.text || "");

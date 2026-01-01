@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import "regenerator-runtime/runtime";
 import LanguageSelector from "@/components/Inputs/LanguageSelector";
 import {
@@ -143,4 +143,4 @@ const OutputPanelComponent = ({
   );
 };
 
-export default OutputPanelComponent;
+export default memo(OutputPanelComponent);
